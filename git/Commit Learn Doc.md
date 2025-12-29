@@ -16,24 +16,62 @@ This prompt takes git commits (with messages and diffs) as input and produces de
 
 ---
 
+## Workflow Context
+
+Commit files are exported with the naming convention `DD-MM-YYYY-hash-message.md`. Your generated learning documentation will be appended to the end of these files. Once your documentation is added, the file will be renamed with a `✓_` prefix (e.g., `✓_29-12-2025-abc1234-feat_add_auth.md`) to indicate it has been processed.
+
+This helps track which commits have complete learning documentation.
+
+---
+
 ## Input Format
 
-All input MUST be provided at the end of your request, following this structure:
+You will receive the complete content of a git commit file with the following structure:
 
+```markdown
+# Commit Details
+
+## Metadata
+- **Short Hash:** `abc1234`
+- **Full Hash:** `abc1234567890...`
+- **Date:** DD-MM-YYYY
+- **Message:** commit message
+
+### Author Information
+- **Name:** Author Name
+- **Email:** author@email.com
+
+### Committer Information
+- **Name:** Committer Name
+- **Email:** committer@email.com
+
+### Parent Commits
+- `parent_hash_1`
+- `parent_hash_2` (if merge commit)
+
+---
+
+## Files Changed
+- **file1.js** (`M`)
+  - Additions: +50
+  - Deletions: -20
+
+### Change Summary Statistics
+X files changed, Y insertions(+), Z deletions(-)
+
+---
+
+## Full Commit Information
 ```
-COMMITS:
+[git show output]
+```
 
-[Commit 1]
-Message: <commit message>
-Diff:
-<full git diff output>
+---
 
-[Commit 2]
-Message: <commit message>
-Diff:
-<full git diff output>
-
-... additional commits ...
+## Diff
+```diff
+[full git diff]
+```
 ```
 
 ---
@@ -1405,83 +1443,6 @@ Relationships:
 
 ---
 
-### Learning Recommendations
-
-**If you're new to this code:**
-1. Start with the Executive Summary and Core Concepts
-2. Try the Beginner Level examples hands-on
-3. Review the flashcards to reinforce key concepts
-4. Read the Code Logic & Architecture section when ready
-
-**If you're familiar with the basics:**
-1. Focus on the Code Quality Analysis section
-2. Work through Intermediate and Advanced examples
-3. Study the Official Documentation references
-4. Review Future Considerations for improvement opportunities
-
-**If you're an expert:**
-1. Evaluate the Future Considerations section
-2. Identify refactoring opportunities to implement
-3. Consider contributing to the improvements identified
-4. Help update this documentation as the code evolves
-
----
-
-### Follow-Up Tasks
-
-**Immediate:**
-- [ ] Review code changes mentioned in this document
-- [ ] Try at least one hands-on example
-- [ ] Identify any unclear sections and request clarification
-
-**This Week:**
-- [ ] Complete exercises relevant to your skill level
-- [ ] Review official documentation links for deeper understanding
-- [ ] Note any questions or concerns about the implementation
-
-**Ongoing:**
-- [ ] Practice concepts using the flashcards periodically
-- [ ] Apply learned patterns to your own code
-- [ ] Share this documentation with team members
-- [ ] Contribute improvements as you discover them
-
----
-
-### Documentation Updates
-
-**Next Review:** [Suggested: 3-6 months or after major changes]
-
-**Update Triggers:**
-- Significant code changes to analyzed commits
-- Discovery of errors or outdated information
-- New team members need clarification
-- Security vulnerabilities identified
-- Performance issues discovered
-
-**How to Contribute:**
-- Report issues or suggestions: [Link/Contact]
-- Submit corrections or additions: [Process]
-- Request additional examples: [Process]
-
----
-
-### Quick Reference
-
-**Remember These Key Points:**
-1. [Most important concept from the commits]
-2. [Critical pattern or practice to remember]
-3. [Major pitfall to avoid]
-4. [Key improvement opportunity]
-5. [Essential next step]
-
-**Useful Resources:**
-- [Link to related documentation]
-- [Link to relevant tools]
-- [Link to team communication channel]
-```
-
----
-
 ## Generation Guidelines
 
 When generating learning documentation from commits:
@@ -1552,42 +1513,25 @@ Before delivering the learning documentation, verify:
 
 ---
 
-## Philosophy
+## Output Format
 
-**Learning is not passive absorption but active construction of understanding.**
+Begin your response with this exact separator and header:
 
-This documentation should:
-- **Empower** developers to become experts
-- **Illuminate** the reasoning behind code choices
-- **Preserve** knowledge for future teams
-- **Accelerate** onboarding and productivity
-- **Inspire** continuous improvement
-- **Connect** code to broader principles
-
-**Every commit is a learning opportunity. Every change tells a story. Make that story educational.**
-
+```markdown
+---
 ---
 
-## Example Usage
-
-```
-Please analyze the following commits and generate comprehensive learning documentation:
-
-COMMITS:
-
-[Commit 1]
-Message: feat(auth): implement JWT authentication
-Diff:
-[... full git diff ...]
-
-[Commit 2]
-Message: test(auth): add JWT token validation tests
-Diff:
-[... full git diff ...]
+# 📚 LEARNING DOCUMENTATION
 ```
 
-The system will then generate a complete learning document following all sections above, tailored to the specific commits provided.
-
----
-
-**Meta-Instruction:** This prompt itself should evolve. As you generate documentation and identify improvements to this prompt structure, note them in the "Future Considerations" section of generated documents to iteratively enhance this framework.
+Then provide all 10 sections in complete detail following the structures defined above:
+1. Executive Summary
+2. Core Concepts & Fundamentals
+3. Code Logic & Architecture Analysis
+4. Official Documentation & Standards References
+5. Hands-On Learning Examples
+6. Memorization & Retention Aids
+7. Code Quality Analysis
+8. Purpose & Context Analysis
+9. Future Considerations
+10. Action Items & Next Steps
