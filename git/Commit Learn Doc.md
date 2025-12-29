@@ -18,9 +18,15 @@ This prompt takes git commits (with messages and diffs) as input and produces de
 
 ## Workflow Context
 
-Commit files are located in a folder called `docs` and follow the naming convention `DD-MM-YYYY-hash-message.md`. Your generated learning documentation will be appended to the end of these files. Once your documentation is added, the file will be renamed with a `✓_` prefix (e.g., `✓_29-12-2025-abc1234-feat_add_auth.md`) to indicate it has been processed.
+Commit files are located in a folder called `docs` and follow the naming convention `DD-MM-YYYY-hash-message.md`.
 
-This helps track which commits have complete learning documentation.
+IMPORTANT — OUTPUT PLACEMENT (MUST FOLLOW):
+
+- The generated learning documentation MUST be appended directly INTO THE SAME commit file, immediately AFTER the original commit details (metadata, files changed, full commit info and diff).
+- Do NOT create new files, do NOT place documentation in a different location. The learning doc becomes part of the same file.
+- After appending the documentation, the file should be renamed with a `✓_` prefix (for example: `✓_29-12-2025-abc1234-feat_add_auth.md`) to mark it as processed.
+
+This single-file approach is required so developers have the commit and its learning documentation together in one place.
 
 ### CRITICAL: One File at a Time
 
