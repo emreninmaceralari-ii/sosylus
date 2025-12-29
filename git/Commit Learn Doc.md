@@ -24,7 +24,7 @@ IMPORTANT — OUTPUT PLACEMENT (MUST FOLLOW):
 
 - The generated learning documentation MUST be appended directly INTO THE SAME commit file, immediately AFTER the original commit details (metadata, files changed, full commit info and diff).
 - Do NOT create new files, do NOT place documentation in a different location. The learning doc becomes part of the same file.
-- After appending the documentation, the file should be renamed with a `✓_` prefix (for example: `✓_29-12-2025-abc1234-feat_add_auth.md`) to mark it as processed.
+- After appending the documentation, the file should be renamed with a `✓_` prefix (for example: `✓_DD-MM-YYYY-hash-message.md`) to mark it as processed.
 
 This single-file approach is required so developers have the commit and its learning documentation together in one place.
 
