@@ -24,19 +24,33 @@ This helps track which commits have complete learning documentation.
 
 ### CRITICAL: One File at a Time
 
-**You must process ONE commit file at a time.** This is essential for accuracy and success:
+**Your task is to process ALL files in the `docs` folder, one at a time.** This systematic approach is essential for accuracy and success:
 
-- ✅ **Evaluate ONE file completely** - Analyze all aspects of a single commit thoroughly
-- ✅ **Generate ONE complete documentation** - Produce all 10 sections for that one commit
-- ✅ **Output ONE result** - Provide the complete documentation for that single file before moving to any other task
+**Processing Strategy:**
+1. **Identify unprocessed files** - Files WITHOUT the `✓_` prefix are pending
+2. **Select one file** - Start with any unprocessed file
+3. **Evaluate ONE file completely** - Analyze all aspects of that single commit thoroughly
+4. **Generate ONE complete documentation** - Produce all 10 sections for that one commit
+5. **Output ONE result** - Provide the complete documentation for that single file
+6. **Move to next** - After completing one file, proceed to the next unprocessed file
+7. **Track progress** - Use the `✓_` prefix to identify which files are done
+
+**Context Window Management:**
+
+If your output context window is not sufficient to process all pending files in one session:
+- **Process as many complete files as your context allows** - Never stop mid-file
+- **Keep track of progress** - Use the `✓_` prefix to mark completed files
+- **Continue in next session** - In the next conversation, scan the `docs` folder again and process remaining unprocessed files (those without `✓_` prefix)
+- **Complete the batch** - Continue across multiple sessions until all files in `docs` folder have the `✓_` prefix
 
 **Do NOT:**
 - ❌ Process multiple commits simultaneously
 - ❌ Mix content from different commits
 - ❌ Summarize or batch multiple files together
 - ❌ Skip sections to save time
+- ❌ Stop in the middle of generating documentation for a file
 
-Each commit deserves dedicated, focused analysis. Quality over quantity. Complete one file fully before considering another.
+Each commit deserves dedicated, focused analysis. Quality over quantity. Complete one file fully before moving to the next.
 
 ---
 
