@@ -38,10 +38,20 @@ This helps track which commits have complete learning documentation.
 **Context Window Management:**
 
 If your output context window is not sufficient to process all pending files in one session:
-- **Process as many complete files as your context allows** - Never stop mid-file
-- **Keep track of progress** - Use the `✓_` prefix to mark completed files
-- **Continue in next session** - In the next conversation, scan the `docs` folder again and process remaining unprocessed files (those without `✓_` prefix)
+- **Process files sequentially in the same session** - After completing one file and marking it with `✓_` prefix, immediately continue to the next unprocessed file if your output context allows
+- **Maximize each session** - Keep processing files one by one in a single session until your output context window is nearly full
+- **Never stop mid-file** - Always complete the entire 10-section documentation for a file before moving to the next
+- **Track progress with `✓_` prefix** - Each completed file gets renamed immediately so you know which files are done
+- **Continue in next session** - When your output context is full, note how many files were completed. In the next conversation, scan the `docs` folder again and process remaining unprocessed files (those without `✓_` prefix)
 - **Complete the batch** - Continue across multiple sessions until all files in `docs` folder have the `✓_` prefix
+
+**Single Session Workflow:**
+1. Complete File 1 → Mark with `✓_` → Check output context
+2. If context allows → Complete File 2 → Mark with `✓_` → Check output context
+3. If context allows → Complete File 3 → Mark with `✓_` → Check output context
+4. Continue until output context is nearly full
+5. Stop at completion of a file (never mid-file)
+6. Next session: Resume with remaining unprocessed files
 
 **Do NOT:**
 - ❌ Process multiple commits simultaneously
