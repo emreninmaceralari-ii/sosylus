@@ -18,7 +18,7 @@ This prompt takes git commits (with messages and diffs) as input and produces de
 
 ## Workflow Context
 
-Commit files are exported with the naming convention `DD-MM-YYYY-hash-message.md`. Your generated learning documentation will be appended to the end of these files. Once your documentation is added, the file will be renamed with a `✓_` prefix (e.g., `✓_29-12-2025-abc1234-feat_add_auth.md`) to indicate it has been processed.
+Commit files are located in a folder called `docs` and follow the naming convention `DD-MM-YYYY-hash-message.md`. Your generated learning documentation will be appended to the end of these files. Once your documentation is added, the file will be renamed with a `✓_` prefix (e.g., `✓_29-12-2025-abc1234-feat_add_auth.md`) to indicate it has been processed.
 
 This helps track which commits have complete learning documentation.
 
