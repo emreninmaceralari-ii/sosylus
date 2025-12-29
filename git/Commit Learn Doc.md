@@ -22,6 +22,22 @@ Commit files are exported with the naming convention `DD-MM-YYYY-hash-message.md
 
 This helps track which commits have complete learning documentation.
 
+### CRITICAL: One File at a Time
+
+**You must process ONE commit file at a time.** This is essential for accuracy and success:
+
+- ✅ **Evaluate ONE file completely** - Analyze all aspects of a single commit thoroughly
+- ✅ **Generate ONE complete documentation** - Produce all 10 sections for that one commit
+- ✅ **Output ONE result** - Provide the complete documentation for that single file before moving to any other task
+
+**Do NOT:**
+- ❌ Process multiple commits simultaneously
+- ❌ Mix content from different commits
+- ❌ Summarize or batch multiple files together
+- ❌ Skip sections to save time
+
+Each commit deserves dedicated, focused analysis. Quality over quantity. Complete one file fully before considering another.
+
 ---
 
 ## Input Format
